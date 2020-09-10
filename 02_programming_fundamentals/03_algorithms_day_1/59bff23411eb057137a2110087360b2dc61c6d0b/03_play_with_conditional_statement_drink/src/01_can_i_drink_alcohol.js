@@ -2,11 +2,24 @@
 //
 // Create two objects, `frieda`, `francis` with the fields :
 //   `age` (an integer) and `name`, (obviously a string)
-
+const frieda = {
+  age : 41,
+  name : "falskog"
+};
+const francis = {
+  age : 52,
+  name : "martin",
+};
+let canFriedaDrinkAlcohol = true;
+let canFrancisDrinkAlcohol = true;
 // Create two variables `canFriedaDrinkAlcohol` and `canFrancisDrinkAlcohol` to answer,
 // respectively, to the question "Can he / she drink alcohol?".
 // Think about the Primitive Data Type that is best suited for the answer.
 // Hint: Think about the number of options
+if ((canFriedaDrinkAlcohol)&(canFrancisDrinkAlcohol)){ 
+  console.log("Can he / she drink alcohol."); }
+
+
 
 // These variables should stay correct if we modify the ages of the objects
 // `francis` and `frieda` in the declaration.
