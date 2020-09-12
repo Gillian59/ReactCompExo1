@@ -11,8 +11,8 @@ function fizzBuzz() {
     (tab [i] % 5 === 0) {
       tab [i] = "Buzz";
     }
-    else if 
-    ((tab [i] % 3 === 0) && (tab [i] % 5 === 0)) {
+    else 
+    ((tab [i] % 3 === 0) & (tab [i] % 5 === 0)) {
       tab [i] = "FizzBuzz";
     }
 
