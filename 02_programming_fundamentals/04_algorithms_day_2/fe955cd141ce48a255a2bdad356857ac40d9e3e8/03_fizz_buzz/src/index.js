@@ -4,17 +4,19 @@ function fizzBuzz() {
 
   for (let i = 0 ; i < tab.length ; i++ ){
 
-    if (tab [i] % 3 === 0) {
+    if  ((tab [i] % 3 === 0) & (tab [i] % 5 === 0)) {
+          tab [i] = "FizzBuzz";
+     }
+    
+    else if 
+    (tab [i] % 3 === 0) {
       tab [i] = "Fizz";
     }
-    else if 
+    else 
     (tab [i] % 5 === 0) {
       tab [i] = "Buzz";
-    }
-    else 
-    ((tab [i] % 3 === 0) & (tab [i] % 5 === 0)) {
-      tab [i] = "FizzBuzz";
-    }
+
+    
 
   }
   return console.log(tab);
