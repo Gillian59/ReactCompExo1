@@ -61,6 +61,17 @@ function logInfos(user) {
 }
 
 module.exports = {
-  getConfig,
-  logInfos,
+  getConfig 
+  logInfos ({
+    
+    firstName: "John",
+    lastName: "Rambo",
+    address: {
+      city: "Hope",
+      country: "Canada"
+    
+  }
+})
+  ,
 };
+//"John Rambo lives in Hope, Canada."
