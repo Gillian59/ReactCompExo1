@@ -1,36 +1,39 @@
-import {} from "./index.js";
-
-const readline = require("readline");
-
-const reader = readline.createInterface({
-  input: process.stdin,
-  output: process.stdout,
-});
+import createCustomer from "./createCustomer";
 
 
 
-function createDisplay(choice){
+console.log(`Welcome !`);
+
+export default function createDisplay(reader){
+
+const options = ["Add new customer", "Access customer data", "Quit"];
+options.forEach((option, index) => console.log(`${index + 1} -  ${option}`));
+
 reader.question ("Choose an action ", (choice) => {
-    console.log(`Welcome !`);
+    
     switch (choice) {
-        case 1 :
+        case "1":
             console.log("- Add new customer");
+            createCustomer(reader);
             break;
-        case 2 : 
+        case "2" : 
             console.log("- Add new - Access customer data");
             break;
-        case 3 : 
+        case "3" : 
             console.log("- Quit");
             break;
         default :
             console.log("error");
 
     };
-    createDisplay(choice);
+    
+
+
+    
     reader.close();
 
     });
 };
 
-  
-export display; 
+ // si je sélectionne 1, affiche "ajoute un nouveau client" 
+ //  je doic créer un nouveau client 

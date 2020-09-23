@@ -1,33 +1,43 @@
 
-import {} from "./index.js";
-import {} from "./interface.js";
 
-const readline = require("readline");
-
-const reader = readline.createInterface({
-  input: process.stdin,
-  output: process.stdout,
-});
+import * as uuid from "uuid";
+import 
 
 
-function createCustomer(reader){
-    reader.question ("firstname ", (firstName) => {
-        reader.question (" lastname ", (lastName) => {
-            reader.question (" email ", (email) => {
-                reader.question (" birthday ", (birthday) => {
-                    reader.question (" city ", (city) => {
-                        reader.question (" city ", (country) => {
-        console.log(${firstname} ${lastName} ${email}) ${birthday} ${city} ${country};
-         customerNew = {
-            id : 
-            firstname : firstname,
-            lastName : lastName,
-            email : email,
-            birthday : birthday,
-            city : city,
-            country : country,
+export default function createCustomer(reader){
+    const customerNew = {
+        id : uuid.v4(),
+        firstname : "",
+        lastName : "",
+        email : "",
+        birthday : "",
+        city : "",
+        country : "",
 
-         }                   
+     };
+    reader.question ("firstname ", (firstNameInput) => {
+        reader.question (" lastname ", (lastNameInput) => {
+            reader.question (" email ", (emailInput) => {
+                reader.question (" birthday ", (birthdayInput) => {
+                    reader.question (" city ", (cityInput) => {
+                        reader.question (" city ", (countryInput) => {
+        console.log(`${firstnameInput} ${lastNameInput} ${emailInput} ${birthdayInput} ${cityInput} ${countryInput}`);
+        
+        customerNew.firstname = firstNameInput,
+        customerNew.lastName = lastNameInput,
+        customerNew.email = emailInput,
+        customerNew.birthday = birthdayInput,
+        customerNew.city = cityInput,
+        customerNew.country = countryInput,
+    
+                        });
+                    });
+                });
+            });
+        });
+
+
+       
     
         });
         createCustomer();
@@ -35,9 +45,6 @@ function createCustomer(reader){
     
         };
     
-    
-
-
-
-
-export createCustomer ;
+createCustomer(reader);
+// si je sélectionne 1, affiche "ajoute un nouveau client" 
+ //  je doic créer un nouveau client 
