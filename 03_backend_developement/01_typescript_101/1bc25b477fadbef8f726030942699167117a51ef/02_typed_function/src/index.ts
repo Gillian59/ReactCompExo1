@@ -1,18 +1,15 @@
 
-
-function handleTuple (tuple: [string, number]=["word", 2]): void {
+function handleTuple (tuple: [string, number]): void {
   
   // Code the function here.
 
-  if (typeof [0])  {
-    console.log(tuple[0])
+  if (typeof value[0] === "string")  {
+    console.log(`${value[0]} ${typeof value[0]}`);
   }
-  else (typeof[1]) {
-    console.log(tuple[1])
-  }
-  
-  
-};
+  else if (typeof value[1] === "number") {
+    console.log(`${value[1]} ${typeof value[1]}`);
+  } 
+}
 
 
 // const add = (a: number, b: number): number => a + b;
