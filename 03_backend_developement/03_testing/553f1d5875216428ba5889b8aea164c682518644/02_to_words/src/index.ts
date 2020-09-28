@@ -3,3 +3,4 @@ export function toWords(sentence: string): string[] {
 
   return allWords.filter(word => word !== "");
 }
+

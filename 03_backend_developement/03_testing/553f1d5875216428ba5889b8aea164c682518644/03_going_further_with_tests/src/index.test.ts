@@ -27,10 +27,12 @@ describe("Let the tests on arrays begin !", () => {
     expect.assertions(1);
 
     mockArray = ["Into the wild", "Alien the 8th passenger","Ip Man","Tombeau des lucioles", "fight club"];
+    
   })
 
   // Create a test that fails if "Indiana Jones 4" is present in mockArray.
   mockArray = ["Into the wild", "Alien the 8th passenger","Ip Man","Tombeau des lucioles", "fight club"];
+
 
   // Create a test fails if the list has less than 5 elements.
   mockArray = ["Lord of the rings : the return of the king", "Into the wild", "Alien the 8th passenger", "Tombeau des lucioles", "fight club"];
