@@ -1,0 +1,1 @@
+curl www.wttr.in/Moscow
