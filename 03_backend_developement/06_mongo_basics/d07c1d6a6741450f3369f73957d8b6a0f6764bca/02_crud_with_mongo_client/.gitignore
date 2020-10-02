@@ -1,0 +1,7 @@
+node_modules
+*.DS_Store
+
+
+mongodb://<user>:<password>@<host>/<database>
+
+export MONGODB_URI=mongodb://mongo-basics-app:password@localhost:27017/mongo-basics
