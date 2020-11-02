@@ -10,8 +10,8 @@ const reader = readline.createInterface({
 
 const moves = {
 
-rock :
-[
+  rock :
+  [
     "    ________        ",
     "---'   _ ,  |       ",
     "      (__(__)       ",
@@ -43,68 +43,46 @@ rock :
 
 clear();
 console.log("Welcome to ShiFuMi");
+(Object.keys(moves)).forEach((key, index) => console.log(`${index + 1} - ${key}`));
 
-// afficher la liste des mouvements pour les proposer au joueur :
-// faire une boucle pour lire l'objet en tableau 
-Object.keys(moves).forEach((moveName, index) => {
-    console.log (`${index + 1}  :  ${moveName}`);
-});
+const game = () => {
+  reader.question("Please choose a move\n> ", (moveChoiced) => {
+    if (moveChoiced === "1" || moveChoiced === "2" || moveChoiced === "3"){
+      const moveList = Object.entries(moves);
 
+      const choiceUser = moveList[moveChoiced - 1];
+      const choiceIa = moveList[Math.floor(Math.random() * moveList.length)];
 
-// choix aléatoire de la machine
-const FindNbAleatMac = Math.floor(Math.random() * 3);
-const FindIndexAleatMac = Object.keys(moves)[FindNbAleatMac];
-const FindValueAleatMac = moves[FindIndexAleatMac];
+      console.log(choiceUser);
+      console.log(choiceIa);
 
-// inverser le mouvement (encore en recherche car je cherche une autre solution)
-const reverseFindValueAleatMac = FindValueAleatMac.reverse();
-console.log(reverseFindValueAleatMac);
+        if (choiceUser === [0] && choiceIa === [2]) {
+          console.log("vous avez gagné");
+          console.log(choiceUser[0]);
+          console.log(choiceIa[2]);
+        } else if (choiceUser === "1" && choiceIa === "0") {
+          console.log("vous avez gagné");
+        } else if (choiceUser === "2" && choiceIa === "1") {
+          console.log("vous avez gagné");
+        } else if (choiceUser === choiceIa) {
+            console.log("vous êtes à égalité");
+        } else {
+          console.log("vous avez perdu");
+        }
 
-// le joueur sélectionne un mouvement 
-// affichage en 1er du choix du joueur et en 2nd du choix de l'ordinateur 
-reader.question("Please choose a move\n> ", (moveChoiced) => {
-  // Handle the move
-
-    const index = (moveChoiced - 1);
-    const move = Object.keys(moves)[index];
-    const moveSymbol = moves[move];
-    console.log("votre choix : ");
-    console.log(moveSymbol.join("\n"));
-    console.log("le choix de l'ordinateur");
-    console.log (FindValueAleatMac.join("\n"));
-
-
-
-// comparaison des choix du joueur et de l'ordinateur
-/*function compare (){
-  if (moveSymbol === this.rock && FindValueAleatMac === this.rock){
-    console.log("you are equal");
-  } else if 
-    (moveSymbol === this.rock && FindValueAleatMac === this.scissors){
-    console.log("you are win");
+        
+      reader.close();
+      
+       
+    } else {
+      console.log("votre choix n'est pas valide, veuillez saisir un chiffre entre 1 et 3");
+      game();
     }
-    else if  
-    (moveSymbol === this.paper && FindValueAleatMac === this.rock){
-    console.log("you are win");
-    }
-    else if(moveSymbol === this.scissors && FindValueAleatMac === this.paper){
-    console.log("you are win");
-    }
-    else 
-      console.log("you are lose");
+  });
+}
 
+game();
 
-  }
-  
- compare();
- */
-
-
-
-
-  reader.close();
-  
-});
 
 
 
